@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import {
   HashRouter,
   NavLink,
@@ -6,36 +6,47 @@ import {
   Route,
   Outlet,
   useNavigate,
-  useParams
-} from 'react-router-dom';
+  useParams,
+} from "react-router-dom";
 
 const Todo = () => {
-  return <>
-    <p>這是 Todo 頁面</p>
-    <Logout />
-  </>
-  ;
+  return (
+    <>
+      <p>這是 Todo 頁面</p>
+      <Logout />
+    </>
+  );
 };
 const Login = () => {
   return <p>這是登入頁面</p>;
 };
 const Logout = () => {
   const navigate = useNavigate();
-  return <button onClick={() => {navigate('/login')}}>登出</button>;
+  return (
+    <button
+      onClick={() => {
+        navigate("/login");
+      }}
+    >
+      登出
+    </button>
+  );
 };
 const Register = () => {
   return <p>這是註冊頁面</p>;
 };
 const Post = () => {
-  return <div>
-    <h3>詳細資料</h3>
-    <Outlet />
-  </div>
-}
+  return (
+    <div>
+      <h3>詳細資料</h3>
+      <Outlet />
+    </div>
+  );
+};
 const PostId = () => {
   let params = useParams();
   return <p>PostID: {params.postId}</p>;
-}
+};
 
 function App() {
   return (
